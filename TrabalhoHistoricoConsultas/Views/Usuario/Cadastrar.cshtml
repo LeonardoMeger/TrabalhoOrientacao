@@ -1,0 +1,23 @@
+﻿@model TrabalhoHistoricoConsultas.Models.Usuario
+
+@{ 
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{
+    ViewBag.Title = "Histórico de Consultas Online";
+}
+
+<div class="form-horizontal">
+    <h1> Histórico de Consultas Online</h1>
+    <hr />
+    <div id="Login" class="form-group">
+        <h2> Criar Conta</h2>
+        @Html.LabelFor(model => model.Login, new { @class = "control-label col-sm-2" })
+        <div class="col-sm-10">
+            @Html.TextBoxFor(model => model.Login, new { @class = "form-control", @placeholder = "Digite o login" })
+            @Html.ValidationMessageFor(model => model.Login,
+                null, new { @class = "text-danger" })
+        </div>
+    </div>
+    @Html.ActionLink("Voltar", "Index", "Home")
+</div>
